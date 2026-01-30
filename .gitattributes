@@ -1,6 +1,5 @@
 # Default
 * text=auto eol=lf
-
 # Unity text-based assets (YAML)
 *.unity         text eol=lf
 *.asset         text eol=lf
@@ -12,24 +11,25 @@
 *.scenetemplate text eol=lf
 *.inputactions  text eol=lf
 *.meta          text eol=lf
-
 # Project / Packages
 *.json          text eol=lf
 *.txt           text eol=lf
 *.md            text eol=lf
 *.asmdef        text eol=lf
-
 # Code
 *.cs            text eol=lf
 *.shader        text eol=lf
 *.compute       text eol=lf
 *.hlsl          text eol=lf
 *.glsl          text eol=lf
-
 # Binary (never touch)
 *.png           binary
 *.jpg           binary
-*.exr           binary
-*.fbx           binary
-*.wav           binary
-*.mp3           binary
+*.exr filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
