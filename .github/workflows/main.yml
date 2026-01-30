@@ -33,6 +33,14 @@ jobs:
           restore-keys: |
             Library-WebGL-${{ runner.os }}-
 
+      - name: Free Disk Space
+        run: |
+          sudo swapoff -a
+          sudo rm -f /swapfile
+          sudo apt clean
+          docker rmi $(docker image ls -aq)
+          df -h
+
       - name: Build WebGL
         uses: game-ci/unity-builder@v4
         with:
