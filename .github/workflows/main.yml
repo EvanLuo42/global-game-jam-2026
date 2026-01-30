@@ -1,10 +1,13 @@
-name: Unity WebGL Build
+name: Unity WebGL Build & Deploy
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
+permissions:
+  contents: write
 
 jobs:
   build-webgl:
@@ -43,3 +46,9 @@ jobs:
         with:
           name: WebGL-Build
           path: build/WebGL
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/WebGL
