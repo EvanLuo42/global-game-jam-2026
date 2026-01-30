@@ -34,12 +34,9 @@ jobs:
             Library-WebGL-${{ runner.os }}-
 
       - name: Free Disk Space
-        run: |
-          sudo swapoff -a
-          sudo rm -f /swapfile
-          sudo apt clean
-          docker rmi $(docker image ls -aq)
-          df -h
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
 
       - name: Build WebGL
         uses: game-ci/unity-builder@v4
@@ -54,8 +51,21 @@ jobs:
           name: WebGL-Build
           path: build/WebGL/WebGL
 
+      - name: Set deploy directory
+        id: deploy_dir
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "dir=pr-${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref_name }}" = "main" ]; then
+            echo "dir=." >> $GITHUB_OUTPUT
+          else
+            SAFE_NAME=$(echo "${{ github.ref_name }}" | tr '/' '-')
+            echo "dir=$SAFE_NAME" >> $GITHUB_OUTPUT
+          fi
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/WebGL/WebGL
+          destination_dir: ${{ steps.deploy_dir.outputs.dir }}
