@@ -38,7 +38,6 @@ jobs:
         with:
           targetPlatform: WebGL
           buildName: WebGL
-          buildPath: build
           allowDirtyBuild: true
 
       - name: Upload WebGL Build
@@ -52,3 +51,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/WebGL
+          destination_dir: WebGL
