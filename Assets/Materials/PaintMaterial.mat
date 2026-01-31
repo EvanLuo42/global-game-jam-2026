@@ -45,7 +45,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ActiveMask: 1
+    - _ActiveMask: 3
     - _EnableExternalAlpha: 0
     - _MaskAlpha: 0.6
     - _ZWrite: 0

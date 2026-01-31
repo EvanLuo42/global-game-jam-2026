@@ -48,6 +48,7 @@ Material:
     - _BlurStrength: 2.29
     - _DarkenStrength: 0.787
     - _EnableExternalAlpha: 0
+    - _InvertStrength: 1
     - _LightenStrength: 0.744
     - _ZWrite: 0
     m_Colors:
