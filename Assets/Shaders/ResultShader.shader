@@ -8,6 +8,7 @@ Shader "Mask/Result"
         _DarkenStrength  ("Darken Strength", Range(0,1)) = 0.5
         _LightenStrength ("Lighten Strength", Range(0,1)) = 0.5
         _BlurStrength    ("Blur Strength", Range(0,5)) = 1.0
+        _InvertStrength  ("Invert Strength (Blue Mask)", Range(0,1)) = 1.0
     }
 
     SubShader
@@ -60,6 +61,7 @@ Shader "Mask/Result"
                 float _DarkenStrength;
                 float _LightenStrength;
                 float _BlurStrength;
+                float _InvertStrength;
             CBUFFER_END
 
             Varyings vert (Attributes IN)
@@ -99,6 +101,12 @@ Shader "Mask/Result"
 
                 return col;
             }
+            
+            float3 ApplyInvert(float3 col, float mask)
+            {
+                float3 invertedCol = 1.0 - col;
+                return lerp(col, invertedCol, mask * _InvertStrength);
+            }
 
             half4 frag (Varyings IN) : SV_Target
             {
@@ -107,6 +115,7 @@ Shader "Mask/Result"
                 float darkenMask  = smoothstep(0.45, 0.55, m0.r);
                 float lightenMask = smoothstep(0.45, 0.55, m0.g);
                 float blurMask    = smoothstep(0.45, 0.55, m0.b);
+                float invertMask  = smoothstep(0.45, 0.55, m0.a);
 
                 float3 baseCol = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv).rgb;
                 
@@ -117,6 +126,7 @@ Shader "Mask/Result"
 
                 col = ApplyDarken(col, darkenMask);
                 col = ApplyLighten(col, lightenMask);
+                col = ApplyInvert(col, invertMask);
 
                 return float4(col, 1.0);
             }

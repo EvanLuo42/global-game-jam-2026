@@ -4,6 +4,7 @@
     {
         Darken = 0, 
         Lighten = 1, 
-        Blur = 2
+        Blur = 2,
+        Invert = 3
     }
 }
