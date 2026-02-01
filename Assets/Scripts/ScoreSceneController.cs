@@ -1,8 +1,10 @@
 using DefaultNamespace;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TouchPhase = UnityEngine.TouchPhase;
 
 /// <summary>
 /// 结算场景控制器
@@ -46,6 +48,9 @@ public class ScoreSceneController : MonoBehaviour
     public AudioClip endingBGM;
 
     private bool _isGameComplete;
+    
+    private bool _canProceed = false;
+    private bool _hasClicked = false;
 
     private void Start()
     {
@@ -64,6 +69,8 @@ public class ScoreSceneController : MonoBehaviour
         {
             levelNameText.text = level.displayName;
         }
+        
+        AudioManager.Instance?.FadeToBGM(endingBGM);
 
         // 显示当前关卡分数
         DisplayLevelScore(result);
@@ -75,19 +82,30 @@ public class ScoreSceneController : MonoBehaviour
         if (_isGameComplete)
         {
             ShowEnding();
-            if (endingBGM != null)
-                AudioManager.Instance?.PlayBGM(endingBGM, volume: 0.3f);
-        }
-        else
-        {
-            HideEnding();
-            if (scoreSceneBGM != null)
-                AudioManager.Instance?.PlayBGM(scoreSceneBGM, volume: 0.2f);
         }
 
         // 设置按钮文本
         UpdateButtonText();
+        
+        _canProceed = true;
+
     }
+    
+    private void GoToEnding()
+    {
+        TransitionController.Instance.TransitionToScene("EndingScene");
+    }
+    
+    private void Update()
+    {
+        var mouse = Mouse.current;
+
+        if (mouse.leftButton.isPressed)
+        {
+            Proceed();
+        }
+    }
+
 
     /// <summary>
     /// 显示当前关卡分数
@@ -179,6 +197,13 @@ public class ScoreSceneController : MonoBehaviour
         {
             endingDescriptionText.text = EndingCalculator.GetEndingDescription(ending);
         }
+    }
+    
+    private void Proceed()
+    {
+        _hasClicked = true;
+
+        GoToEnding();
     }
 
     /// <summary>
