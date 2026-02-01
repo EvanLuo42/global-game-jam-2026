@@ -100,10 +100,16 @@ public class ScoreSceneController : MonoBehaviour
     {
         var mouse = Mouse.current;
 
-        if (mouse.leftButton.isPressed)
+        if (!mouse.leftButton.isPressed) return;
+        if (GlobalState.CurrentLevel.displayName ==
+            "The Big Green Factory Serves Up a Healthy Future For the People")
         {
-            Proceed();
+            GoToEnding();
+            return;
         }
+
+        GlobalState.CurrentLevel = GlobalState.CurrentLevel.nextLevel;
+        TransitionController.Instance.TransitionToScene("IntroScene");
     }
 
 
