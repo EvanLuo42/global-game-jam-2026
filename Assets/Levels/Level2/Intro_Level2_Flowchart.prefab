@@ -64,7 +64,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 4764056652450343184}
   selectedCommands:
-  - {fileID: 0}
+  - {fileID: 2376745925091265711}
   variables: []
   description: 
   stepPause: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 412
     y: 12
-    width: 75.98286
+    width: 75.979996
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -103,7 +103,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 8973915839081804172}
   - {fileID: -9198206301378133674}
-  - {fileID: 0}
   - {fileID: 2376745925091265711}
   suppressAllAutoSelections: 0
 --- !u!114 &8973915839081804172
