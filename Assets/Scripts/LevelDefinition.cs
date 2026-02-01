@@ -25,6 +25,18 @@ public class LevelDefinition : ScriptableObject
     
     [Header("Dialogue")]
     public FungusIntroData introDialogue;
+
+    [Header("Boss Dialogue (所有关卡可选)")]
+    [Tooltip("进入 Level 后右上角 Boss 对话")]
+    public BossDialogueData bossDialogue;
+    [Tooltip("前多少句为自动播放（约 3 秒后下一句），其余句需点击 Apply 后进入下一句")]
+    public int bossDialogueAutoAdvanceCount = 0;
+
+    [Header("工具触发对话 (可选)")]
+    [Tooltip("玩家点击 Lighten 工具时显示的一句对话")]
+    public string lightenToolDialogueText;
+    [Tooltip("玩家点击 Lighten 时播放的语音")]
+    public AudioClip lightenToolDialogueVoice;
     
     [Header("Time Limit")]
     [Tooltip("关卡时间限制 (秒), 0表示无限制")]

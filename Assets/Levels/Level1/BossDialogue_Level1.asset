@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e4f1c2d9b806543e2189ab3c5d7e0f, type: 3}
+  m_Name: BossDialogue_Level1
+  m_EditorClassIdentifier: Assembly-CSharp::BossDialogueData
+  entries:
+  - text: 'Boss: Look at this sketch.'
+    voiceClip: {fileID: 8300000, guid: 5b1d5c1b03acb0946b425c99e1147030, type: 3}
+  - text: 'Boss: The headline is already drafted: '
+    voiceClip: {fileID: 8300000, guid: e037c02d1ecfa1e42a22443ae1d430d9, type: 3}
+  - text: 'Boss: ''Thug Wields Knife, Righteous Citizen Forced to Defend.'''
+    voiceClip: {fileID: 8300000, guid: 789474dc9c996934fb963d4391fefcd3, type: 3}
+  - text: 'Boss: But the raw photo is too... ''real.'''
+    voiceClip: {fileID: 8300000, guid: 27393dbddaab01f458059ad042379a4b, type: 3}
+  - text: 'Boss:  Look, it looks more like the guy on the left is fleeing for his
+      life. '
+    voiceClip: {fileID: 8300000, guid: 822003d465dbbb04ea20287c78a3daaf, type: 3}
+  - text: 'Boss:  All you need to do is to use the mask tool to mask 4 different
+      effects on the photograph.  '
+    voiceClip: {fileID: 8300000, guid: 481ef814d5123c344ac15ec07663c064, type: 3}
+  - text: "Boss:  First, use BLUR to wipe out that guy's face on the left. Don't
+      let people see his fear.\r\n "
+    voiceClip: {fileID: 8300000, guid: bf8a481ad29c9e941a2d8ccca2241836, type: 3}
+  - text: "Boss:  Use DARKEN to hide the person on the right in the shadows. Make
+      him the 'Mysterious Victim.'\r\n "
+    voiceClip: {fileID: 8300000, guid: c5d306ceb583c10488283411a8cf6131, type: 3}
+  - text: "Boss:  Now, the most critical step: the knife in the middle. Is it pointing
+      to the right? Bullshit. Use the INVERT tool. We need to flip the narrative.\r\n "
+    voiceClip: {fileID: 8300000, guid: 4b99a83102ac10e4684c924025f9c532, type: 3}
+  - text: I missed a LIGHTEN tool, but we almost never use that one, unless we need
+      to deliberately manufacture Mr. Big Green's righteousness..."
+    voiceClip: {fileID: 8300000, guid: 4f732dd044df1dd419751f979470a615, type: 3}
+  - text: 'Boss: If you think you''re done, hit Submit. There. That is the Truth
+      We Need. As for what the picture originally looked like? ZERO people care.'
+    voiceClip: {fileID: 8300000, guid: b9a1a0cc37e9ad449aebcf83f58355fe, type: 3}
+  - text: 'Boss: Well, I have to admit that you are a fast learner... but I don''t
+      think you are ready enough. I will come back tomorrow.'
+    voiceClip: {fileID: 8300000, guid: 4f732dd044df1dd419751f979470a615, type: 3}

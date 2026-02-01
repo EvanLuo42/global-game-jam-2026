@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.Flowchart
   version: 1
-  scrollPos: {x: 128.40503, y: 163}
+  scrollPos: {x: -289.41998, y: 244.14288}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -84,8 +84,7 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 4764056652450343184}
-  selectedCommands:
-  - {fileID: 830392638439294579}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -113,7 +112,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 412
     y: 12
-    width: 75.979996
+    width: 75.98286
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: Assembly-CSharp::LevelDefinition
   displayName: Broke Ash Press Software
+  isTutorial: 1
   nextLevel: {fileID: 11400000, guid: dece0b5a598a2a94aa6848b25f01b552, type: 2}
   sourceImage: {fileID: 2800000, guid: 2e29218ef3702a84f87efcd5b8670402, type: 3}
+  editableAreaMask: {fileID: 0}
   injusticeMask: {fileID: 2800000, guid: c5b54020ad9145945b61c568584d9ca8, type: 3}
   introDialogue: {fileID: 11400000, guid: 68904cea0a1b01f4083be41476c32eb7, type: 2}
+  bossDialogue: {fileID: 11400000, guid: c9d6e3f4a0b817654f4290bc5d7e9f2b, type: 2}
+  bossDialogueAutoAdvanceCount: 3
+  lightenToolDialogueText: Who told you to use Lighten?! Didn't I tell you not to
+    touch it? Do you want to get fired?
+  lightenToolDialogueVoice: {fileID: 8300000, guid: 7d255790697e64f4dba2be3f36a2d10f, type: 3}
+  timeLimit: 120
