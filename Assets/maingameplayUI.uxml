@@ -2,47 +2,38 @@
     <Style src="project://database/Assets/styleSheet.uss?fileID=7433441132597879392&amp;guid=746f46cc9792b58488b0d8f40cb175bd&amp;type=3#styleSheet"/>
     <ui:VisualElement name="Root" class="root-container">
         <ui:VisualElement name="Header" class="header">
-            <ui:Label text="Broke Ash Press Software" class="header-title"/>
+            <ui:Label text="" class="header-title" style="opacity: 0;"/>
         </ui:VisualElement>
         <ui:VisualElement name="MiddleSection" class="middle-section">
             <ui:VisualElement name="LeftArea" class="left-area">
-                <ui:VisualElement name="SidebarStandard" class="sidebar-container">
+                <ui:VisualElement name="SidebarStandard" class="sidebar-container hidden">
                     <ui:Button class="circle-btn small-icon"/>
                     <ui:Button class="circle-btn small-icon"/>
                     <ui:Button class="circle-btn small-icon"/>
                 </ui:VisualElement>
-                <ui:VisualElement name="SidebarMaskTools" class="sidebar-container hidden">
+                <ui:VisualElement name="SidebarMaskTools" class="sidebar-container">
                     <ui:VisualElement name="" class="tool-wrapper selected-tool">
-                        <ui:Button text="Pen" name="Paint" class="circle-btn big-tool"/>
+                        <ui:Button text="" name="Paint" class="circle-btn big-tool pen-tool"/>
                     </ui:VisualElement>
                     <ui:VisualElement name="" class="tool-wrapper">
-                        <ui:Button text="Eraser" name="Erase" class="circle-btn big-tool"/>
+                        <ui:Button text="" name="Erase" class="circle-btn big-tool eraser-tool"/>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Viewport" class="viewport">
-                <ui:Image name="ViewportImage" scale-mode="StretchToFill" style="height: 100%; width: 100%; aspect-ratio: auto;"/>
+                <ui:Image name="ViewportImage" scale-mode="StretchToFill" style="height: 90%; width: 90%; aspect-ratio: auto;"/>
             </ui:VisualElement>
-            <ui:VisualElement name="LayerPanel" class="layer-panel hidden">
-                <ui:VisualElement class="layer-header">
-                    <ui:Label text="Layers"/>
-                </ui:VisualElement>
-                <ui:ScrollView>
-                    <ui:Button text="Layer 3: Effect" class="layer-item"/>
-                    <ui:Button text="Layer 2: Mask" class="layer-item layer-active"/>
-                    <ui:Button text="Layer 1: Raw" class="layer-item"/>
-                </ui:ScrollView>
-            </ui:VisualElement>
+            <ui:VisualElement name="LayerPanel" class="layer-panel"/>
         </ui:VisualElement>
         <ui:VisualElement name="BottomBar" class="bottom-bar">
             <ui:VisualElement name="LeftGroup" class="btn-group">
-                <ui:Button name="BtnDarken" text="Darken" class="bottom-btn w-80"/>
-                <ui:Button name="BtnBlur" text="Gaussian Blur" class="bottom-btn w-80"/>
-                <ui:Button name="BtnNegative" text="Color Negative" class="bottom-btn w-80"/>
-                <ui:Button name="BtnLighten" text="Lighten" class="bottom-btn w-80"/>
+                <ui:Button name="BtnDarken" text="" class="bottom-btn w-80"/>
+                <ui:Button name="BtnBlur" text="" class="bottom-btn w-80"/>
+                <ui:Button name="BtnNegative" text="" class="bottom-btn w-80"/>
+                <ui:Button name="BtnLighten" text="" class="bottom-btn w-80"/>
             </ui:VisualElement>
             <ui:VisualElement name="RightGroup" class="btn-group">
-                <ui:Button name="MainActionBtn" text="Submit" class="bottom-btn submit-btn"/>
+                <ui:Button name="MainActionBtn" text="" class="bottom-btn submit-btn"/>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

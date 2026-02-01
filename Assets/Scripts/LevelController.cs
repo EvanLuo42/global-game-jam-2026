@@ -175,57 +175,32 @@ public class LevelController : MonoBehaviour
 
     private void UpdateUIState()
     {
-        // 按钮高亮处理
+        // 按钮高亮处理 - 使用tint效果
         foreach (var btn in _effectButtons)
         {
             if (btn == _currentSelectedBtn) btn.AddToClassList("btn-selected");
             else btn.RemoveFromClassList("btn-selected");
         }
         
+        // 工具按钮选中状态 - 通过selected-tool类来控制
+        var paintWrapper = _paintButton?.parent;
+        var eraseWrapper = _eraseButton?.parent;
+        
         if (_currentPainterMode == PainterMode.Paint)
-            _paintButton.AddToClassList("btn-selected");
-        else
-            _paintButton.RemoveFromClassList("btn-selected");
-
-        if (_currentPainterMode == PainterMode.Erase)
-            _eraseButton.AddToClassList("btn-selected");
-        else
-            _eraseButton.RemoveFromClassList("btn-selected");
-
-        var isEditingMode = _currentSelectedBtn != null;
-
-        // 控制显隐
-        if (isEditingMode)
         {
-            // 此时显示工具栏 (Pen/Eraser)
-            _sidebarMaskTools?.RemoveFromClassList("hidden");
-
-            // 确保旧的侧边栏是隐藏的
-            _sidebarStandard?.AddToClassList("hidden");
-
-            // 显示图层面板
-            _layerPanel?.RemoveFromClassList("hidden");
-
-            if(_btnSubmit != null) _btnSubmit.text = "Apply";
-
-            // 修改图层名字
-            if (_layerActiveBtn != null) 
-                _layerActiveBtn.text = $"Layer 2: {_currentSelectedBtn.text}";
+            paintWrapper?.AddToClassList("selected-tool");
+            eraseWrapper?.RemoveFromClassList("selected-tool");
         }
         else
         {
-            
-            // 这里把 Standard Sidebar 也隐藏了
-            // 之前这里是 RemoveFromClassList("hidden")，现在改成 Add，让它消失
-            _sidebarStandard?.AddToClassList("hidden");
-
-            // 隐藏工具栏
-            _sidebarMaskTools?.AddToClassList("hidden");
-
-            // 隐藏图层面板
-            _layerPanel?.AddToClassList("hidden");
-
-            if(_btnSubmit != null) _btnSubmit.text = "Submit";
+            paintWrapper?.RemoveFromClassList("selected-tool");
+            eraseWrapper?.AddToClassList("selected-tool");
         }
+
+        // Tool bar 和 Layer bar 是装饰性的，始终显示
+        // 不再根据编辑模式隐藏/显示
+        _sidebarStandard?.AddToClassList("hidden");
+        _sidebarMaskTools?.RemoveFromClassList("hidden");
+        // Layer panel 始终可见（装饰性）
     }
 }

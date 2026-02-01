@@ -1,0 +1,75 @@
+PNG UI Implementation Summary
+================================
+
+Date: 2026-02-01
+Status: COMPLETED
+
+PNG Assets Used:
+----------------
+1. BG.png - Main background with newspaper style frame and header
+2. Darken.png - Effect button (289x80px)
+3. Blur.png - Effect button
+4. Color Negative.png - Effect button
+5. Lighten.png - Effect button
+6. Submit.png - Submit button (green, with dashed border)
+7. Pen Tool.png - Tool icon
+8. Eraser.png - Tool icon
+9. Layers Bar.png - Complete layer panel with 3 layers
+10. Tool Bar.png - Tool sidebar background (not currently used)
+
+Files Modified:
+---------------
+1. Assets/styleSheet.uss
+   - Added background-image for root-container using BG.png
+   - Removed CSS borders and backgrounds, replaced with PNG images
+   - Added individual button styles with PNG backgrounds
+   - Configured tint colors for selected state
+   - Adjusted spacing and sizes to match PNG dimensions
+
+2. Assets/maingameplayUI.uxml
+   - Cleared all button text attributes (text="")
+   - Added pen-tool and eraser-tool classes
+   - Hidden header label (already in BG.png)
+   - Made layer items transparent (already in Layers Bar.png)
+
+3. Assets/Scripts/LevelController.cs
+   - Updated UpdateUIState() to remove text manipulation
+   - Kept CSS class toggling for selected states
+   - Tool selection now uses parent wrapper classes
+   - Removed dynamic text changes for submit button and layers
+
+Visual Effects:
+---------------
+- Selected buttons: Tinted with rgb(255, 220, 150) via .btn-selected class
+- Selected tools: Tinted with rgb(255, 200, 100) via .selected-tool class
+- Layer panel: Static PNG image, no dynamic layer updates
+- All borders and frames: Now part of BG.png
+
+Testing Checklist:
+------------------
+[X] Background displays correctly
+[X] Bottom effect buttons (Darken, Blur, etc.) show PNG images
+[X] Submit button displays green PNG
+[X] Pen and Eraser tools show correct icons
+[X] Layer panel displays complete PNG
+[X] Button click areas work correctly
+[X] Selected state shows tint effect
+[X] Tool switching between Pen/Eraser works
+[X] Effect selection highlights button
+[X] No linter errors
+
+Known Limitations:
+------------------
+1. Layer panel is now static - cannot dynamically change layer names
+2. Submit button text cannot change between "Submit" and "Apply"
+3. Tool Bar.png is available but not currently used in layout
+4. Selected state uses tint color (not separate PNG images)
+
+Future Improvements:
+--------------------
+- Add hover effects with additional PNG states
+- Create selected state PNGs for more visual feedback
+- Add Tool Bar.png as background for sidebar container
+- Consider using 9-slice for scalable buttons
+- Add transition animations for state changes
+
