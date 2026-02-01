@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelController
   viewImageRenderer: {fileID: 1263565386}
-  maskPainter: {fileID: 0}
+  maskPainter: {fileID: 1495598084}
   uiDocument: {fileID: 857337427}
   existingLevelScript: {fileID: 0}
   targetRT: {fileID: 8400000, guid: 4cb5f6ecdb3cb9648b162a833c0d8e59, type: 2}

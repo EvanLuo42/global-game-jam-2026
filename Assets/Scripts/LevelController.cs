@@ -29,6 +29,8 @@ public class LevelController : MonoBehaviour
     private VisualElement _layerPanel;
     private Image _viewport;
     private Button _btnSubmit;
+    private Button _paintButton;
+    private Button _eraseButton;
     
     // 这里改成了 Button，之前是 Label 导致报错
     private Button _layerActiveBtn; 
@@ -38,6 +40,8 @@ public class LevelController : MonoBehaviour
     
     // 当前选中的按钮
     private Button _currentSelectedBtn;
+
+    private PainterMode _currentPainterMode = PainterMode.Paint;
 
     private void OnEnable()
     {
@@ -68,6 +72,8 @@ public class LevelController : MonoBehaviour
         _layerPanel = _root.Q("LayerPanel");
         _viewport = _root.Q<Image>("ViewportImage");
         _btnSubmit = _root.Q<Button>("MainActionBtn");
+        _paintButton = _root.Q<Button>("Paint");
+        _eraseButton = _root.Q<Button>("Erase");
         
         // 获取图层按钮，并赋值给 Button 类型的变量
         _layerActiveBtn = _root.Q<Button>(className: "layer-active");
@@ -94,7 +100,24 @@ public class LevelController : MonoBehaviour
             targetBtn.clicked += () => OnEffectClicked(targetBtn);
         }
 
+        _paintButton.clicked += OnPaintClicked;
+        _eraseButton.clicked += OnEraseClicked;
+
         if (_btnSubmit != null) _btnSubmit.clicked += OnSubmitClicked;
+    }
+
+    private void OnPaintClicked()
+    {
+        _currentPainterMode = PainterMode.Paint;
+        maskPainter.OnSwitchPainterMode((int)PainterMode.Paint);
+        UpdateUIState();
+    }
+    
+    private void OnEraseClicked()
+    {
+        _currentPainterMode = PainterMode.Erase;
+        maskPainter.OnSwitchPainterMode((int)PainterMode.Erase);
+        UpdateUIState();
     }
 
     private void OnEffectClicked(Button clickedBtn)
@@ -142,6 +165,16 @@ public class LevelController : MonoBehaviour
             if (btn == _currentSelectedBtn) btn.AddToClassList("btn-selected");
             else btn.RemoveFromClassList("btn-selected");
         }
+        
+        if (_currentPainterMode == PainterMode.Paint)
+            _paintButton.AddToClassList("btn-selected");
+        else
+            _paintButton.RemoveFromClassList("btn-selected");
+
+        if (_currentPainterMode == PainterMode.Erase)
+            _eraseButton.AddToClassList("btn-selected");
+        else
+            _eraseButton.RemoveFromClassList("btn-selected");
 
         var isEditingMode = _currentSelectedBtn != null;
 

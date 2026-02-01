@@ -12,11 +12,11 @@
                     <ui:Button class="circle-btn small-icon"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="SidebarMaskTools" class="sidebar-container hidden">
-                    <ui:VisualElement class="tool-wrapper selected-tool">
-                        <ui:Button text="Pen" class="circle-btn big-tool"/>
+                    <ui:VisualElement name="" class="tool-wrapper selected-tool">
+                        <ui:Button text="Pen" name="Paint" class="circle-btn big-tool"/>
                     </ui:VisualElement>
-                    <ui:VisualElement class="tool-wrapper">
-                        <ui:Button text="Eraser" class="circle-btn big-tool"/>
+                    <ui:VisualElement name="" class="tool-wrapper">
+                        <ui:Button text="Eraser" name="Erase" class="circle-btn big-tool"/>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
