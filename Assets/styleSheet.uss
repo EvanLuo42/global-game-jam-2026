@@ -1,5 +1,5 @@
 /* ================= 全局基础 ================= */
-/* 所有尺寸基于1080p，通过PanelSettings自动缩放 */
+/* 所有尺寸使用百分比，动态适配任何分辨率 */
 .root-container {
     flex-grow: 1;
     background-image: url('project://database/Assets/Sprites/UI/Level/BG.png?fileID=21300000&guid=1704905ac71b80644ad553bee80f1957&type=3#BG_0');
@@ -9,50 +9,56 @@
     font-style: bold;
 }
 
+/* Header: 154/1080 = 14.26% */
 .header {
-    height: 45px;
+    height: 14.26%;
     justify-content: center;
     align-items: center;
 }
 
 /* ================= 中间布局 ================= */
+/* Middle section占据剩余空间: 100% - 14.26% - 14.54% = 71.2% */
 .middle-section {
     flex-grow: 1;
     flex-direction: row;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 4.53%;
+    padding-right: 4.53%;
     padding-top: 0;
     padding-bottom: 0;
     justify-content: space-between;
+    align-items: stretch;
 }
 
 .left-area {
+    width: 11.04%;
+    height: 100%;
     align-items: flex-start;
     flex-shrink: 0;
+    justify-content: flex-start;
 }
 
 .viewport {
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 /* ================= 侧边栏工具 (Standard & Mask) ================= */
-/* Tool bar: 原始PNG 212x729，缩放50% */
+/* Tool bar填充left-area */
 .sidebar-container {
-    width: 80px;
-    height: 275px;
+    width: 100%;
+    height: 95%;
     align-items: center;
-    padding-top: 22px;
+    padding-top: 60%;
     background-image: url('project://database/Assets/Sprites/UI/Level/Tool%20Bar.png?fileID=21300000&guid=e9e5bc6c7f40f294d9831a9ce617b931&type=3#Tool Bar_0');
     -unity-background-scale-mode: scale-to-fit;
     flex-shrink: 0;
 }
 
 .circle-btn {
-    margin-bottom: 8px;
+    margin-bottom: 5%;
     justify-content: center;
     align-items: center;
     border-width: 0;
@@ -60,16 +66,16 @@
     -unity-background-scale-mode: scale-to-fit;
 }
 
-/* 小图标 (原侧边栏) */
+/* 小图标 */
 .small-icon {
-    width: 20px;
-    height: 20px;
+    width: 70%;
+    height: 12%;
 }
 
-/* 大工具 (Pen/Eraser) - 缩放50% */
+/* 大工具 (Pen/Eraser): 增大尺寸 */
 .big-tool {
-    width: 32px;
-    height: 38px;
+    width: 80%;
+    height: 22%;
     font-size: 0;
 }
 
@@ -85,7 +91,7 @@
 
 /* Tool wrapper */
 .tool-wrapper {
-    margin-bottom: 8px;
+    margin-bottom: 3%;
 }
 
 /* 选中的工具 - 使用tint效果 */
@@ -94,10 +100,10 @@
 }
 
 /* ================= 右侧图层面板 (Layers) - 装饰性 ================= */
-/* Layer bar: 原始PNG 212x729，缩放50% */
+/* Layer bar: 212/1920 = 11.04% 宽度 */
 .layer-panel {
-    width: 80px;
-    height: 275px;
+    width: 11.04%;
+    height: 95%;
     background-image: url('project://database/Assets/Sprites/UI/Level/Layers%20Bar.png?fileID=21300000&guid=4f307987c3a65f74fa64a0de8566263e&type=3#Layers Bar_0');
     -unity-background-scale-mode: scale-to-fit;
     flex-shrink: 0;
@@ -117,28 +123,30 @@
 }
 
 /* ================= 底部栏 ================= */
+/* 底部栏: 157/1080 = 14.54% */
 .bottom-bar {
-    height: 60px;
+    height: 14.54%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 4.53%;
+    padding-right: 4.53%;
     padding-top: 0;
 }
 
 .btn-group {
     flex-direction: row;
     align-items: center;
+    height: 100%;
 }
 
-/* 底部按钮 - 原始PNG约200x55，缩放50% */
+/* 底部按钮: 增大宽度 */
 .bottom-btn {
-    width: 80px;
-    height: 22px;
+    width: 30%;
+    height: 70%;
     border-width: 0;
     background-color: transparent;
-    margin-right: 6px;
+    margin-right: 1.5%;
     padding: 0;
     -unity-background-scale-mode: scale-to-fit;
     font-size: 0;
@@ -172,19 +180,19 @@
 }
 
 .plus-btn {
-    width: 20px;
-    height: 20px;
+    width: 2%;
+    height: 25%;
     font-size: 12px;
     padding: 0;
     -unity-text-align: middle-center;
 }
 
-/* === 新增：用于在 UXML 中控制显隐的工具类 === */
+/* === 用于在 UXML 中控制显隐的工具类 === */
 .hidden {
     display: none;
 }
 
-/* === 新增：之前写在 UXML style 里的宽度设置 === */
+/* === 宽度设置 === */
 .w-80 {
-    width: 80px;
+    width: 30%;
 }
