@@ -266,8 +266,117 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6634baf4dbb076c4a9ef4cf058ea7100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelController
+  viewImageRenderer: {fileID: 1263565386}
+  maskPainter: {fileID: 0}
   uiDocument: {fileID: 857337427}
   existingLevelScript: {fileID: 0}
+  targetRT: {fileID: 8400000, guid: 4cb5f6ecdb3cb9648b162a833c0d8e59, type: 2}
+--- !u!1 &1263565385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1263565387}
+  - component: {fileID: 1263565386}
+  m_Layer: 0
+  m_Name: ViewImageRenderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1263565386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263565385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf786cb5008982e429b24ee807d299e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ViewImageRenderer
+  maskPreviewMat: {fileID: 2100000, guid: 8f175e2784cf48a49bde9ef9beca9176, type: 2}
+  paintMat: {fileID: 2100000, guid: 529b74c25ffd393438d6dba75eff86b3, type: 2}
+  resultMat: {fileID: 2100000, guid: cd46542e3fe664244a3cfca3f4d9cef8, type: 2}
+  sourceImage: {fileID: 2800000, guid: 477caa399d474a444962d4161f2d33b0, type: 3}
+  maskRT0: {fileID: 8400000, guid: ad6581011556ffc499c8d7f93270d4f3, type: 2}
+  maskRT1: {fileID: 8400000, guid: 7dc3a50eb1b57c24eaa877b33dc346d5, type: 2}
+  outputRT: {fileID: 8400000, guid: 4cb5f6ecdb3cb9648b162a833c0d8e59, type: 2}
+--- !u!4 &1263565387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263565385}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 504.4887, y: 295.078, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1495598083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1495598085}
+  - component: {fileID: 1495598084}
+  m_Layer: 0
+  m_Name: MaskPainter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1495598084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495598083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab701bb713fdbd44addf607569848a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskPainter
+  uiDocument: {fileID: 857337427}
+  viewImageController: {fileID: 1263565386}
+  maskRT0: {fileID: 8400000, guid: ad6581011556ffc499c8d7f93270d4f3, type: 2}
+  maskRT1: {fileID: 8400000, guid: 7dc3a50eb1b57c24eaa877b33dc346d5, type: 2}
+  tempRT0: {fileID: 8400000, guid: ab2a0a7222b96024d99e9f1b502571f9, type: 2}
+  tempRT1: {fileID: 8400000, guid: e401308b41779964e83f276300e46fcc, type: 2}
+  painterMaterial: {fileID: 2100000, guid: 1736635555c3d7948931830060c181df, type: 2}
+  radius: 0.05
+  softness: 0.02
+  maskMode: 1
+  painterMode: 1
+--- !u!4 &1495598085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495598083}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 504.4887, y: 295.078, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1588723975
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,8 +543,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6634baf4dbb076c4a9ef4cf058ea7100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  uiDocument: {fileID: 0}
+  viewImageRenderer: {fileID: 1263565386}
+  maskPainter: {fileID: 1495598084}
+  uiDocument: {fileID: 857337427}
   existingLevelScript: {fileID: 0}
+  targetRT: {fileID: 8400000, guid: 4cb5f6ecdb3cb9648b162a833c0d8e59, type: 2}
 --- !u!4 &1798022288
 Transform:
   m_ObjectHideFlags: 0
@@ -509,3 +621,5 @@ SceneRoots:
   - {fileID: 127676167}
   - {fileID: 2147474880}
   - {fileID: 857337428}
+  - {fileID: 1263565387}
+  - {fileID: 1495598085}

@@ -21,7 +21,7 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Viewport" class="viewport">
-                <ui:Label text="illustration with real time previews"/>
+                <ui:Image name="ViewportImage" scale-mode="StretchToFill" style="height: 100%; width: 100%; aspect-ratio: auto;"/>
             </ui:VisualElement>
             <ui:VisualElement name="LayerPanel" class="layer-panel hidden">
                 <ui:VisualElement class="layer-header">
@@ -36,11 +36,11 @@
         </ui:VisualElement>
         <ui:VisualElement name="BottomBar" class="bottom-bar">
             <ui:VisualElement name="LeftGroup" class="btn-group">
-            <ui:Button name="BtnDarken" text="Darken" class="bottom-btn w-80" />
-            <ui:Button name="BtnBlur" text="Gaussian Blur" class="bottom-btn w-80" />
-            <ui:Button name="BtnNegative" text="Color Negative" class="bottom-btn w-80" />
-            <ui:Button name="BtnLighten" text="Lighten" class="bottom-btn w-80" />
-        </ui:VisualElement>
+                <ui:Button name="BtnDarken" text="Darken" class="bottom-btn w-80"/>
+                <ui:Button name="BtnBlur" text="Gaussian Blur" class="bottom-btn w-80"/>
+                <ui:Button name="BtnNegative" text="Color Negative" class="bottom-btn w-80"/>
+                <ui:Button name="BtnLighten" text="Lighten" class="bottom-btn w-80"/>
+            </ui:VisualElement>
             <ui:VisualElement name="RightGroup" class="btn-group">
                 <ui:Button name="MainActionBtn" text="Submit" class="bottom-btn submit-btn"/>
             </ui:VisualElement>

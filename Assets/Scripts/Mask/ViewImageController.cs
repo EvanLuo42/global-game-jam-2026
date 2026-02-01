@@ -39,12 +39,4 @@ public class ViewImageController : MonoBehaviour
         _image.material.SetTexture(MaskTex0, maskRT0);
         _image.material.SetTexture(MaskTex1, maskRT1);
     }
-
-    public void OnSwitchMaskMode(MaskMode mode)
-    {
-        if (_image.material == paintMat)
-        {
-            _image.material.SetInt(ActiveMask, (int) mode);
-        }
-    }
 }
