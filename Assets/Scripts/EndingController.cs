@@ -31,11 +31,11 @@ public class EndingController : MonoBehaviour
         if (!_canExit || _hasClicked)
             return;
 
-        var mouse = Mouse.current;
-        if (mouse.leftButton.isPressed)
-        {
-            ExitEnding();
-        }
+        // var mouse = Mouse.current;
+        // if (mouse.leftButton.isPressed)
+        // {
+        //     ExitEnding();
+        // }
     }
 
     private void HideAllImages()
