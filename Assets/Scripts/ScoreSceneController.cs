@@ -96,7 +96,7 @@ public class ScoreSceneController : MonoBehaviour
     {
         if (soldCopies != null)
         {
-            soldCopies.text = $"Sold Copies: {result.salesRate * 100:F1}%";
+            soldCopies.text = $"{result.salesRate * 100:F1}%";
         }
         else
         {
@@ -105,7 +105,7 @@ public class ScoreSceneController : MonoBehaviour
 
         if (bossSatisfaction != null)
         {
-            bossSatisfaction.text = $"Boss Satisfaction: {result.bossSatisfaction * 100:F1}%";
+            bossSatisfaction.text = $"{result.bossSatisfaction * 100:F1}%";
         }
         else
         {
@@ -114,7 +114,7 @@ public class ScoreSceneController : MonoBehaviour
 
         if (morality != null)
         {
-            morality.text = $"Morality: {result.justiceValue * 100:F1}%";
+            morality.text = $"{result.justiceValue * 100:F1}%";
         }
         else
         {
