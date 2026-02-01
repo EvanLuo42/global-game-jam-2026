@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.Flowchart
   version: 1
-  scrollPos: {x: -289.41998, y: 244.14288}
+  scrollPos: {x: -288.56287, y: 244.14288}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -63,7 +63,8 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 4764056652450343184}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: -9198206301378133674}
   variables: []
   description: 
   stepPause: 0
@@ -118,12 +119,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Say
   itemId: 1
   indentLevel: 0
-  storyText: 'Our hottest entrepreneur idol, Big Green, went to inspect a burger
-    joint and buy lunch with the commoners. '
+  storyText: "Behold, what a magnificent facility! This is the Big Green Innovative
+    Food Factory... processing 256 different types of food and synthetic flavors.
+    It is the savior of mankind, the future of food tech! \r\n"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
-  voiceOverClip: {fileID: 8300000, guid: dadf3fc08ca2ce14da9276234e810bea, type: 3}
+  voiceOverClip: {fileID: 8300000, guid: 806dc39d730496c4a9b6aaa997325d1e, type: 3}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
@@ -146,13 +148,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Say
   itemId: 2
   indentLevel: 0
-  storyText: "A heartwarming story of connecting with the people. But the photos
-    sent by our frontline reporters contain some tiny flaws that tarnish Big Green\u2019s
-    perfect image...\r\n"
+  storyText: 'However, the photos from the front line have a few tiny blemishes that
+    might give people unnecessary misunderstandings about the Super Food Factory...
+
+'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
-  voiceOverClip: {fileID: 8300000, guid: 917f45b0b7570874693c4f23cfac47be, type: 3}
+  voiceOverClip: {fileID: 8300000, guid: f38ff69818608914a80b81feb91875fa, type: 3}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
