@@ -25,13 +25,12 @@ public class TitleSceneController : MonoBehaviour
         // 重置游戏状态并设置初始关卡
         GlobalState.ResetGameState();
         GlobalState.CurrentLevel = initialLevel;
-        
-        SceneManager.LoadScene("IntroScene");
+        TransitionController.Instance.TransitionToScene("IntroScene");
     }
 
     public void OnClickGallery()
     {
-        AudioManager.Instance?.PlaySFX(galleryAudio);
-        SceneManager.LoadScene("GalleryScene");
+        AudioManager.Instance.PlaySFX(galleryAudio);
+        TransitionController.Instance.TransitionToScene("GalleryScene");
     }
 }

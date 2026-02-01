@@ -75,7 +75,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 4764056652450343184}
   selectedCommands:
-  - {fileID: 2376745925091265711}
+  - {fileID: 4482961835916324436}
   variables: []
   description: 
   stepPause: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Block
   nodeRect:
     serializedVersion: 2
-    x: 410
-    y: 13
+    x: 412
+    y: 12
     width: 75.979996
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -143,7 +143,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "hmm\u2026  I\u2019ve scanned your resume."
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: 754b232ee6c2fec4f98c51a993f0d61e, type: 3}
   showAlways: 1
@@ -170,7 +170,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Graduated from N3 University School of the Arts, was it? \r\n"
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: 13429183b0b66234aa5224e06553c26f, type: 3}
   showAlways: 1
@@ -197,7 +197,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Very nice. You almost look like you\u2019re cut out for this racket! "
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: 5d76df123c9f0594cbe1f7643e4eefa4, type: 3}
   showAlways: 1
@@ -224,7 +224,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'But listen to me, kid. '
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: f0edfec75ee911344a00262217913f00, type: 3}
   showAlways: 1
@@ -253,7 +253,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: 51ab52a1fe2ae7d469a992f91a77d27f, type: 3}
   showAlways: 1
@@ -280,7 +280,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Our majority shareholder, \r\n"
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: 4779e2befcbb8024cb4a8a5d62d8009d, type: 3}
   showAlways: 1
@@ -309,7 +309,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: b631ed255832a3a4786c7da0d3f6b697, type: 3}
   showAlways: 1
@@ -336,7 +336,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: " 'Big Green,' \r\n"
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: 7a2f7c85737aa1c4ea9ea2cb5ee94190, type: 3}
   showAlways: 1
@@ -363,7 +363,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "appears to be a successful entrepreneur. \r\n"
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: c609bb27e58b4754c846a11dc837929d, type: 3}
   showAlways: 1
@@ -390,7 +390,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "But in reality, he is a walking PR disaster... \r\n"
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: e1bccfbc14a554c4692a37eea2a46b55, type: 3}
   showAlways: 1
@@ -417,7 +417,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "He wants to stack the cash and play the idol at the same time. \r\n"
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: 76122a1de8a24e04c90a1ec17dfc2420, type: 3}
   showAlways: 1
@@ -444,7 +444,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "He cannot tolerate even a speck of dust on his public image, \r\n"
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: ba4f230f21f55214082a1ba19e7987ad, type: 3}
   showAlways: 1
@@ -473,7 +473,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 7923877639363496627, guid: 74ba888295ed8ff4fb9d9e6a66b0fac0, type: 3}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 8300000, guid: 445fcc000398c064db15cfee11030938, type: 3}
   showAlways: 1

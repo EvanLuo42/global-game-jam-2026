@@ -13,7 +13,7 @@ public class FungusEndListener : MonoBehaviour
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("LevelScene");
+        TransitionController.Instance.TransitionToScene("LevelScene");
         Destroy(gameObject);
     }
 }

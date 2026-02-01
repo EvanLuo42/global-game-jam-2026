@@ -126,6 +126,7 @@ public class ScoreCalculator : MonoBehaviour
 
         Destroy(playerMask);
         SceneManager.LoadScene("ScoreScene");
+        TransitionController.Instance.TransitionToScene("ScoreScene");
     }
 
     private ScoreResult CreateDefaultScore()
