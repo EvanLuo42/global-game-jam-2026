@@ -19,4 +19,9 @@ MonoBehaviour:
   editableAreaMask: {fileID: 0}
   injusticeMask: {fileID: 2800000, guid: 26ceca12598c6244694154672ed799c7, type: 3}
   introDialogue: {fileID: 11400000, guid: 2c22d025f76350e43a165984e46e919a, type: 2}
+  bossDialogue: {fileID: 11400000, guid: e19cf66362dc0b549bbfce9da09285d6, type: 2}
+  bossDialogueAutoAdvanceCount: 3
+  lightenToolDialogueText: 'What are you trying to do? Do you think your hourly wage
+    isn''t low enough? '
+  lightenToolDialogueVoice: {fileID: 8300000, guid: e87572db48aa2c040aade68119e4af93, type: 3}
   timeLimit: 120
