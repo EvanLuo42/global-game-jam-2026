@@ -1,0 +1,175 @@
+/* ================= 全局基础 ================= */
+.root-container {
+    flex-grow: 1;
+    background-color: #FDFDFD;
+    font-size: 14px;
+    color: #333;
+    font-style: bold; /* 模拟手写体感觉 */
+}
+
+.header {
+    height: 40px;
+    background-color: #E0E0E0; /* 斜线纹理背景色 */
+    justify-content: center;
+    align-items: center;
+    border-bottom-width: 2px;
+    border-color: #333;
+    margin-bottom: 5px;
+}
+
+/* ================= 中间布局 ================= */
+.middle-section {
+    flex-grow: 1;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.left-area {
+    margin-right: 10px;
+    align-items: center;
+}
+
+.viewport {
+    flex-grow: 1;
+    background-color: #fff;
+    border-width: 2px;
+    border-color: #333;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= 侧边栏工具 (Standard & Mask) ================= */
+.sidebar-container {
+    width: 80px; /* 稍微宽一点容纳大球 */
+    align-items: center;
+    padding-top: 10px;
+}
+
+.circle-btn {
+    border-width: 2px;
+    border-color: #333;
+    background-color: #fff;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 小图标 (原侧边栏) */
+.small-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+/* 大工具 (Pen/Eraser) */
+.big-tool {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 14px;
+    white-space: normal; /* 允许换行 */
+}
+
+/* 选中的工具 (橙色高亮) */
+.selected-tool .big-tool {
+    border-color: #FF9800;
+    color: #FF9800;
+    border-width: 3px;
+}
+
+/* ================= 右侧图层面板 (Layers) ================= */
+.layer-panel {
+    width: 180px;
+    margin-left: 10px;
+    background-color: transparent;
+    border-left-width: 0;
+}
+
+.layer-header {
+    height: 35px;
+    background-color: #E0E0E0; /* 模拟斜线 */
+    border-width: 2px;
+    border-color: #333;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.layer-item {
+    height: 60px;
+    background-color: #fff;
+    border-width: 2px;
+    border-color: #333;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    justify-content: center;
+    padding-left: 10px;
+    -unity-text-align: middle-left;
+}
+
+/* 选中图层的高亮样式 (橙色字) */
+.layer-active {
+    color: #FF9800;
+    border-width: 3px; /*稍微加粗框*/
+}
+
+/* ================= 底部栏 ================= */
+.bottom-bar {
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+.btn-group {
+    flex-direction: row;
+    align-items: center;
+}
+
+.bottom-btn {
+    height: 40px;
+    border-width: 2px;
+    border-color: #333;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* 底部按钮选中状态 (橙色边框 + 字) */
+.btn-selected {
+    border-color: #FF9800;
+    color: #FF9800;
+    border-width: 2px;
+}
+
+.plus-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 0;
+    -unity-text-align: middle-center;
+}
+
+.submit-btn {
+    width: 150px;
+}
+
+/* ... 保持你之前的代码不变 ... */
+
+/* === 新增：用于在 UXML 中控制显隐的工具类 === */
+.hidden {
+    display: none;
+}
+
+/* === 新增：之前写在 UXML style 里的宽度设置 === */
+.w-80 {
+    width: 80px;
+}
