@@ -14,6 +14,11 @@ public class EndingController : MonoBehaviour
 
     public Image firedImage;
 
+    public AudioClip movingAudio;
+    public AudioClip knowTooMuchAudio;
+    public AudioClip riseAudio;
+    public AudioClip firedAudio;
+
     private bool _canExit = false;
     private bool _hasClicked = false;
 
@@ -52,18 +57,22 @@ public class EndingController : MonoBehaviour
         {
             case GameEnding.KnowTooMuch:
                 knowTooMuchImage?.gameObject.SetActive(true);
+                AudioManager.Instance.PlaySFX(knowTooMuchAudio);
                 break;
 
             case GameEnding.JumpShip:
                 movingImage?.gameObject.SetActive(true);
+                AudioManager.Instance.PlaySFX(movingAudio);
                 break;
 
             case GameEnding.Promoted:
                 riseImage?.gameObject.SetActive(true);
+                AudioManager.Instance.PlaySFX(riseAudio);
                 break;
 
             case GameEnding.Fired:
                 firedImage?.gameObject.SetActive(true);
+                AudioManager.Instance.PlaySFX(firedAudio);
                 break;
 
             default:

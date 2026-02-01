@@ -257,6 +257,10 @@ MonoBehaviour:
   movingImage: {fileID: 1326012644}
   riseImage: {fileID: 1125851666}
   firedImage: {fileID: 498945687}
+  movingAudio: {fileID: 8300000, guid: dd022939ae6b3c74d8e14a499d473212, type: 3}
+  knowTooMuchAudio: {fileID: 8300000, guid: e3c11b6ab6691c2449797eea67042346, type: 3}
+  riseAudio: {fileID: 8300000, guid: dd022939ae6b3c74d8e14a499d473212, type: 3}
+  firedAudio: {fileID: 8300000, guid: c5f910efb1d409348b1d089beb577f23, type: 3}
 --- !u!4 &299149940
 Transform:
   m_ObjectHideFlags: 0
@@ -329,7 +333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2188069144225041610, guid: 45778ee31ab450b418496b8166b28817, type: 3}
+  m_Sprite: {fileID: -2812560476854934958, guid: b363fab1f1df3e34ea5c5818e4fe70dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -541,7 +545,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2188069144225041610, guid: 45778ee31ab450b418496b8166b28817, type: 3}
+  m_Sprite: {fileID: 4954379808410354435, guid: f3b421c17dd7d0949be3baf3c8472a45, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -616,7 +620,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2188069144225041610, guid: 45778ee31ab450b418496b8166b28817, type: 3}
+  m_Sprite: {fileID: -5340149134676937113, guid: 3c5052b4dffc46c4ea7e936f2a633346, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -770,7 +774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2188069144225041610, guid: 45778ee31ab450b418496b8166b28817, type: 3}
+  m_Sprite: {fileID: 4542292901616906643, guid: 57105fa1cb668074c8efd0b6dabab17a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9d0cd2c8598a3334aa26327426ffec97
+guid: f3b421c17dd7d0949be3baf3c8472a45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1248468409028040232
-    second: Illustration _You got a Rise__0
+      213: 4954379808410354435
+    second: Illustration__You_got_a_Rise__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Illustration _You got a Rise__0
+      name: Illustration__You_got_a_Rise__0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 826d9614763735110800000000000000
-      internalID: 1248468409028040232
+      spriteID: 303caa2bf2e71c440800000000000000
+      internalID: 4954379808410354435
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Illustration _You got a Rise__0: 1248468409028040232
+      Illustration__You_got_a_Rise__0: 4954379808410354435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
