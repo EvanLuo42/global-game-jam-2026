@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b27c7c1cc766c46b55609ef03c217d, type: 3}
   m_Name: Intro_Level3
   m_EditorClassIdentifier: Assembly-CSharp::FungusIntroData
-  flowchartPrefab: {fileID: 8455394048342919323, guid: cf4b1f9b3c67ca94aaf201a5e9542a58, type: 3}
+  flowchartPrefab: {fileID: 8455394048342919323, guid: d31b46a002dcd394a8ca30bb82996f43, type: 3}
   entryBlock: Intro

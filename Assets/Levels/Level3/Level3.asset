@@ -18,5 +18,9 @@ MonoBehaviour:
   sourceImage: {fileID: 2800000, guid: 24288b7f9f1470941ab303d068f95c7d, type: 3}
   editableAreaMask: {fileID: 0}
   injusticeMask: {fileID: 2800000, guid: f539bad4e67e7cb4abd3e103a15dbc05, type: 3}
-  introDialogue: {fileID: 0}
+  introDialogue: {fileID: 11400000, guid: ece40c4640db95d4baa9af417d8809c2, type: 2}
+  bossDialogue: {fileID: 0}
+  bossDialogueAutoAdvanceCount: 0
+  lightenToolDialogueText: 
+  lightenToolDialogueVoice: {fileID: 0}
   timeLimit: 120
