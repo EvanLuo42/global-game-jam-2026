@@ -13,5 +13,6 @@ public class LevelDefinition : ScriptableObject
     [Header("Assets")]
     public Texture2D sourceImage;
     public Texture2D injusticeMask;
-    public VideoClip introVideo;
+    
+    public FungusIntroData introDialogue;
 }
