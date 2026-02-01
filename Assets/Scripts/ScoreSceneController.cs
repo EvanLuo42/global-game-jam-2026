@@ -52,6 +52,8 @@ public class ScoreSceneController : MonoBehaviour
     private bool _canProceed = false;
     private bool _hasClicked = false;
 
+    private bool _pressed = false;
+
     private void Start()
     {
         // 获取当前关卡结果
@@ -100,8 +102,11 @@ public class ScoreSceneController : MonoBehaviour
     {
         if (!_canProceed || _hasClicked) return;
         var mouse = Mouse.current;
-        if (mouse == null || !mouse.leftButton.wasPressedThisFrame) return;
-        TryGoToNextLevelOrEnding();
+        if (!_pressed && mouse.leftButton.isPressed)
+        {
+            TryGoToNextLevelOrEnding();
+            _pressed = true;
+        }
     }
 
     /// <summary>
@@ -110,14 +115,6 @@ public class ScoreSceneController : MonoBehaviour
     private void TryGoToNextLevelOrEnding()
     {
         if (!_canProceed || _hasClicked || GlobalState.CurrentLevel == null) return;
-        _hasClicked = true;
-
-        if (_isGameComplete)
-        {
-            GlobalState.ResetGameState();
-            SceneManager.LoadScene("TitlePage");
-            return;
-        }
         if (GlobalState.CurrentLevel.displayName ==
             "The Big Green Factory Serves Up a Healthy Future For the People")
         {
