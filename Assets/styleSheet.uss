@@ -51,14 +51,14 @@
     width: 100%;
     height: 95%;
     align-items: center;
-    padding-top: 8%;
+    padding-top: 60%;
     background-image: url('project://database/Assets/Sprites/UI/Level/Tool%20Bar.png?fileID=21300000&guid=e9e5bc6c7f40f294d9831a9ce617b931&type=3#Tool Bar_0');
     -unity-background-scale-mode: scale-to-fit;
     flex-shrink: 0;
 }
 
 .circle-btn {
-    margin-bottom: 3%;
+    margin-bottom: 5%;
     justify-content: center;
     align-items: center;
     border-width: 0;
@@ -68,14 +68,14 @@
 
 /* 小图标 */
 .small-icon {
-    width: 60%;
-    height: 10%;
+    width: 70%;
+    height: 12%;
 }
 
 /* 大工具 (Pen/Eraser): 增大尺寸 */
 .big-tool {
-    width: 70%;
-    height: 18%;
+    width: 80%;
+    height: 22%;
     font-size: 0;
 }
 
