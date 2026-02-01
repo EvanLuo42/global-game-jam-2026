@@ -98,9 +98,26 @@ public class ScoreSceneController : MonoBehaviour
     
     private void Update()
     {
+        if (!_canProceed || _hasClicked) return;
         var mouse = Mouse.current;
+        if (mouse == null || !mouse.leftButton.wasPressedThisFrame) return;
+        TryGoToNextLevelOrEnding();
+    }
 
-        if (!mouse.leftButton.isPressed) return;
+    /// <summary>
+    /// 进入下一关的 Intro 或结局；只执行一次（防止 Update 与按钮点击同时触发导致关卡被推进两次）。
+    /// </summary>
+    private void TryGoToNextLevelOrEnding()
+    {
+        if (!_canProceed || _hasClicked || GlobalState.CurrentLevel == null) return;
+        _hasClicked = true;
+
+        if (_isGameComplete)
+        {
+            GlobalState.ResetGameState();
+            SceneManager.LoadScene("TitlePage");
+            return;
+        }
         if (GlobalState.CurrentLevel.displayName ==
             "The Big Green Factory Serves Up a Healthy Future For the People")
         {
@@ -241,22 +258,11 @@ public class ScoreSceneController : MonoBehaviour
     }
 
     /// <summary>
-    /// 下一关按钮点击事件
+    /// 下一关按钮点击事件（与 Update 点击共用 TryGoToNextLevelOrEnding，避免同一次点击推进两次关卡）。
     /// </summary>
     public void OnClickNextLevel()
     {
-        if (_isGameComplete)
-        {
-            // 游戏结束，返回标题
-            GlobalState.ResetGameState();
-            SceneManager.LoadScene("TitlePage");
-        }
-        else
-        {
-            // 进入下一关
-            GlobalState.CurrentLevel = GlobalState.CurrentLevel.nextLevel;
-            SceneManager.LoadScene("IntroScene");
-        }
+        TryGoToNextLevelOrEnding();
     }
 
     /// <summary>
