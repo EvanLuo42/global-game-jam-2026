@@ -19,8 +19,8 @@ MonoBehaviour:
   editableAreaMask: {fileID: 0}
   injusticeMask: {fileID: 2800000, guid: f539bad4e67e7cb4abd3e103a15dbc05, type: 3}
   introDialogue: {fileID: 11400000, guid: ece40c4640db95d4baa9af417d8809c2, type: 2}
-  bossDialogue: {fileID: 0}
-  bossDialogueAutoAdvanceCount: 0
-  lightenToolDialogueText: 
-  lightenToolDialogueVoice: {fileID: 0}
+  bossDialogue: {fileID: 11400000, guid: 87b3e42dd2ee772479b6ab86a7c16f24, type: 2}
+  bossDialogueAutoAdvanceCount: 3
+  lightenToolDialogueText: 'What exactly do you gain by smearing a great factory? '
+  lightenToolDialogueVoice: {fileID: 8300000, guid: 1e630ef1f2a679743821197b69c8fea9, type: 3}
   timeLimit: 120
