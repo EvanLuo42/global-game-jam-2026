@@ -45,8 +45,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlurStrength: 2.29
-    - _DarkenStrength: 0.787
+    - _BlurStrength: 5
+    - _DarkenStrength: 0.887
     - _EnableExternalAlpha: 0
     - _InvertStrength: 1
     - _LightenStrength: 0.744

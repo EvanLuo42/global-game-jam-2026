@@ -257,9 +257,9 @@ MonoBehaviour:
   movingImage: {fileID: 1326012644}
   riseImage: {fileID: 1125851666}
   firedImage: {fileID: 498945687}
-  movingAudio: {fileID: 8300000, guid: dd022939ae6b3c74d8e14a499d473212, type: 3}
+  movingAudio: {fileID: 8300000, guid: 7ab74e2f2b42c9d489adf14e4d6a228c, type: 3}
   knowTooMuchAudio: {fileID: 8300000, guid: e3c11b6ab6691c2449797eea67042346, type: 3}
-  riseAudio: {fileID: 8300000, guid: dd022939ae6b3c74d8e14a499d473212, type: 3}
+  riseAudio: {fileID: 8300000, guid: 21b4d15037580504f8254deed0b9fa34, type: 3}
   firedAudio: {fileID: 8300000, guid: c5f910efb1d409348b1d089beb577f23, type: 3}
 --- !u!4 &299149940
 Transform:

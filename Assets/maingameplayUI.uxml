@@ -26,11 +26,11 @@
             <ui:VisualElement name="LayerPanel" class="layer-panel"/>
         </ui:VisualElement>
         <ui:VisualElement name="BottomBar" class="bottom-bar">
-            <ui:VisualElement name="LeftGroup" class="btn-group" style="width: 100%; flex-basis: auto; flex-shrink: 1;">
-                <ui:Button name="BtnDarken" text="" class="bottom-btn w-80"/>
-                <ui:Button name="BtnBlur" text="" class="bottom-btn w-80"/>
-                <ui:Button name="BtnNegative" text="" class="bottom-btn w-80"/>
-                <ui:Button name="BtnLighten" text="" class="bottom-btn w-80"/>
+            <ui:VisualElement name="LeftGroup" class="btn-group" style="width: 100%; flex-basis: auto; flex-shrink: 1; background-size: 100% 100%;">
+                <ui:Button name="BtnDarken" text="" class="bottom-btn w-80" style="width: 25%;"/>
+                <ui:Button name="BtnBlur" text="" class="bottom-btn w-80" style="width: 25%;"/>
+                <ui:Button name="BtnNegative" text="" class="bottom-btn w-80" style="width: 25%;"/>
+                <ui:Button name="BtnLighten" text="" class="bottom-btn w-80" style="width: 25%;"/>
             </ui:VisualElement>
             <ui:VisualElement name="RightGroup" class="btn-group" style="width: 100%; flex-direction: row-reverse;">
                 <ui:Button name="MainActionBtn" text="" class="bottom-btn submit-btn"/>
