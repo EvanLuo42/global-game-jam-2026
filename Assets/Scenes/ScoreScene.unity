@@ -500,9 +500,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b76be3370f8cc4c9cf1d3d3a610192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreSceneController
-  bossSatisfaction: {fileID: 1710418384}
   soldCopies: {fileID: 1454369396}
+  bossSatisfaction: {fileID: 1710418384}
   morality: {fileID: 1761767342}
+  levelNameText: {fileID: 0}
+  cumulativeCompletionText: {fileID: 0}
+  cumulativeBiasText: {fileID: 0}
+  endingPanel: {fileID: 0}
+  endingTitleText: {fileID: 0}
+  endingDescriptionText: {fileID: 0}
+  nextLevelButton: {fileID: 0}
+  nextLevelButtonText: {fileID: 0}
+  scoreSceneBGM: {fileID: 0}
+  endingBGM: {fileID: 0}
 --- !u!4 &930436843
 Transform:
   m_ObjectHideFlags: 0
@@ -911,7 +921,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -117.030075, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1048,7 +1058,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -117.030045, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1185,7 +1195,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -116.18811, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
