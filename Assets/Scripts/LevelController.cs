@@ -3,14 +3,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
 using Mask;
-using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    private static readonly int MaskTex0 = Shader.PropertyToID("_MaskTex0");
-    private static readonly int MaskTex1 = Shader.PropertyToID("_MaskTex1");
-    private static readonly int ActiveMask = Shader.PropertyToID("_ActiveMask");
-
     public ViewImageRenderer viewImageRenderer;
     public MaskPainter maskPainter;
     
@@ -22,6 +17,12 @@ public class LevelController : MonoBehaviour
 
     [Header("Render Textures")]
     public RenderTexture targetRT;
+
+    [Header("Effect Audios")] 
+    public AudioClip effectSwitch;
+    public AudioClip paintEraser;
+    public AudioClip effectApplyBack;
+    public AudioClip levelBgm;
 
     // 元素引用
     private VisualElement _root;
@@ -44,7 +45,9 @@ public class LevelController : MonoBehaviour
 
     private PainterMode _currentPainterMode = PainterMode.Paint;
 
-    private void OnEnable()
+    private bool _playAudio = false;
+
+    private void Start()
     {
         if (uiDocument == null) 
             uiDocument = FindFirstObjectByType<UIDocument>();
@@ -58,12 +61,16 @@ public class LevelController : MonoBehaviour
         
         // 初始化界面
         UpdateUIState();
-    }
-
-    private void Start()
-    {
+        
         viewImageRenderer.SetViewMode(ViewMode.Result);
         _viewport.image = targetRT;
+    }
+
+    private void Update()
+    {
+        if (_playAudio) return;
+        AudioManager.Instance.PlayBGM(levelBgm, volume: 0.1f);
+        _playAudio = true;
     }
 
     private void FindUIElements()
@@ -109,6 +116,7 @@ public class LevelController : MonoBehaviour
 
     private void OnPaintClicked()
     {
+        AudioManager.Instance.PlaySFX(paintEraser);
         _currentPainterMode = PainterMode.Paint;
         maskPainter.OnSwitchPainterMode((int)PainterMode.Paint);
         UpdateUIState();
@@ -116,6 +124,7 @@ public class LevelController : MonoBehaviour
     
     private void OnEraseClicked()
     {
+        AudioManager.Instance.PlaySFX(paintEraser);
         _currentPainterMode = PainterMode.Erase;
         maskPainter.OnSwitchPainterMode((int)PainterMode.Erase);
         UpdateUIState();
@@ -125,6 +134,8 @@ public class LevelController : MonoBehaviour
     {
         _currentSelectedBtn = _currentSelectedBtn == clickedBtn ? null : // 取消选中
             clickedBtn; // 选中新按钮
+        
+        AudioManager.Instance.PlaySFX(effectSwitch);
 
         var _maskPainter = FindFirstObjectByType<MaskPainter>();
         switch (clickedBtn.name)
@@ -156,6 +167,8 @@ public class LevelController : MonoBehaviour
         //     Debug.Log($"应用效果: {_currentSelectedBtn.text}");
         // else
         //     Debug.Log("提交整个关卡");
+        
+        AudioManager.Instance.PlaySFX(effectApplyBack);
 
         FindFirstObjectByType<ScoreCalculator>().CalculateScore();
     }

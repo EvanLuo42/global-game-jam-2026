@@ -9,6 +9,7 @@ public class IntroSceneController : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.FadeToBGM(null);
         videoPlayer.clip = GlobalState.CurrentLevel.introVideo;
         videoPlayer.Play();
         videoPlayer.loopPointReached += OnVideoEnd;

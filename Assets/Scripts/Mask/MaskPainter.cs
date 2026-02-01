@@ -14,6 +14,9 @@ public class MaskPainter : MonoBehaviour
     [Header("UI Settings")]
     public UIDocument uiDocument;
 
+    [Header("Audios")] 
+    public AudioClip pencil;
+
     private Image _viewport;
     private VisualElement _root;
 
@@ -97,6 +100,8 @@ public class MaskPainter : MonoBehaviour
         evt.StopPropagation();
 
         TryPaintAt(evt.position);
+        
+        AudioManager.Instance.PlayLoopSFX(pencil);
     }
 
     private void OnPointerMove(PointerMoveEvent evt)
@@ -120,6 +125,8 @@ public class MaskPainter : MonoBehaviour
             _viewport.ReleasePointer(_activePointerId);
 
         _activePointerId = -1;
+        
+        AudioManager.Instance.StopSFX();
     }
 
     private void OnPointerCancel(PointerCancelEvent evt)
