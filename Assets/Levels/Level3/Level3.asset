@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 488f832f8c804174e91cb8b4d139642c, type: 3}
-  m_Name: Level2
+  m_Name: Level3
   m_EditorClassIdentifier: Assembly-CSharp::LevelDefinition
-  displayName: 
+  displayName: The Big Green Factory Serves Up a Healthy Future For the People
+  isTutorial: 0
   nextLevel: {fileID: 0}
-  sourceImage: {fileID: 0}
-  targetMask: {fileID: 0}
+  sourceImage: {fileID: 2800000, guid: 24288b7f9f1470941ab303d068f95c7d, type: 3}
+  editableAreaMask: {fileID: 0}
+  injusticeMask: {fileID: 2800000, guid: f539bad4e67e7cb4abd3e103a15dbc05, type: 3}
+  introDialogue: {fileID: 0}
+  timeLimit: 120
