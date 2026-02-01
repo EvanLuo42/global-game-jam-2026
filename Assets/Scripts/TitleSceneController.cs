@@ -12,19 +12,26 @@ public class TitleSceneController : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.FadeToBGM(titleBGM);
+        // 确保游戏状态被重置
+        GlobalState.ResetGameState();
+        
+        AudioManager.Instance?.FadeToBGM(titleBGM);
     }
 
     public void OnClickStartGame()
     {
-        AudioManager.Instance.PlaySFX(startGameAudio);
+        AudioManager.Instance?.PlaySFX(startGameAudio);
+        
+        // 重置游戏状态并设置初始关卡
+        GlobalState.ResetGameState();
         GlobalState.CurrentLevel = initialLevel;
+        
         SceneManager.LoadScene("IntroScene");
     }
 
     public void OnClickGallery()
     {
-        AudioManager.Instance.PlaySFX(galleryAudio);
+        AudioManager.Instance?.PlaySFX(galleryAudio);
         SceneManager.LoadScene("GalleryScene");
     }
 }
