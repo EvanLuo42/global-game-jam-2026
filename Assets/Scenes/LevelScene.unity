@@ -268,6 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelController
   viewImageRenderer: {fileID: 1263565386}
   maskPainter: {fileID: 1495598084}
+  scoreCalculator: {fileID: 0}
   uiDocument: {fileID: 857337427}
   existingLevelScript: {fileID: 0}
   targetRT: {fileID: 8400000, guid: 4cb5f6ecdb3cb9648b162a833c0d8e59, type: 2}
@@ -303,7 +304,6 @@ MonoBehaviour:
   maskPreviewMat: {fileID: 2100000, guid: 8f175e2784cf48a49bde9ef9beca9176, type: 2}
   paintMat: {fileID: 2100000, guid: 529b74c25ffd393438d6dba75eff86b3, type: 2}
   resultMat: {fileID: 2100000, guid: cd46542e3fe664244a3cfca3f4d9cef8, type: 2}
-  sourceImage: {fileID: 2800000, guid: 477caa399d474a444962d4161f2d33b0, type: 3}
   maskRT0: {fileID: 8400000, guid: ad6581011556ffc499c8d7f93270d4f3, type: 2}
   maskRT1: {fileID: 8400000, guid: 7dc3a50eb1b57c24eaa877b33dc346d5, type: 2}
   outputRT: {fileID: 8400000, guid: 4cb5f6ecdb3cb9648b162a833c0d8e59, type: 2}
@@ -545,6 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   viewImageRenderer: {fileID: 1263565386}
   maskPainter: {fileID: 1495598084}
+  scoreCalculator: {fileID: 2147474879}
   uiDocument: {fileID: 857337427}
   existingLevelScript: {fileID: 0}
   targetRT: {fileID: 8400000, guid: 4cb5f6ecdb3cb9648b162a833c0d8e59, type: 2}

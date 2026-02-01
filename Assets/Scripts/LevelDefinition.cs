@@ -11,7 +11,7 @@ public class LevelDefinition : ScriptableObject
     public LevelDefinition nextLevel;
     
     [Header("Assets")]
-    public Texture sourceImage;
-    public Texture targetMask;
+    public Texture2D sourceImage;
+    public Texture2D injusticeMask;
     public VideoClip introVideo;
 }

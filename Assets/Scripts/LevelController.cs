@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
 using Mask;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -151,10 +152,12 @@ public class LevelController : MonoBehaviour
 
     private void OnSubmitClicked()
     {
-        if (_currentSelectedBtn != null)
-            Debug.Log($"应用效果: {_currentSelectedBtn.text}");
-        else
-            Debug.Log("提交整个关卡");
+        // if (_currentSelectedBtn != null)
+        //     Debug.Log($"应用效果: {_currentSelectedBtn.text}");
+        // else
+        //     Debug.Log("提交整个关卡");
+
+        FindFirstObjectByType<ScoreCalculator>().CalculateScore();
     }
 
     private void UpdateUIState()

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelDefinition
   displayName: Broke Ash Press Software
   nextLevel: {fileID: 11400000, guid: dece0b5a598a2a94aa6848b25f01b552, type: 2}
-  sourceImage: {fileID: 0}
-  targetMask: {fileID: 0}
+  sourceImage: {fileID: 2800000, guid: 2e29218ef3702a84f87efcd5b8670402, type: 3}
+  injusticeMask: {fileID: 2800000, guid: c5b54020ad9145945b61c568584d9ca8, type: 3}
+  introVideo: {fileID: 0}

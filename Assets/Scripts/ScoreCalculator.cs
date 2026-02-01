@@ -7,9 +7,6 @@ public class ScoreCalculator : MonoBehaviour
     [Header("Input")]
     public RenderTexture playerMask;
 
-    public Texture2D justiceMask;
-    public Texture2D injusticeMask;
-
     [Header("Params")]
     [Range(0f, 1f)]
     public float attentionThreshold = 0.05f;
@@ -33,40 +30,39 @@ public class ScoreCalculator : MonoBehaviour
         var injusticeSum = 0f;
         var injusticeWeight = 0f;
 
-        for (var y = 0; y < height; y++)
-        {
-            for (var x = 0; x < width; x++)
-            {
-                var p = playerTex.GetPixel(x, y);
-
-                var j = justiceMask.GetPixel(x, y).r;
-                var ij = injusticeMask.GetPixel(x, y).r;
-
-                var region = Mathf.Max(j, ij);
-                if (region < 0.5f)
-                    continue;
-
-                attentionCount++;
-                var totalEdit = p.r + p.g + p.b + p.a;
-                if (totalEdit > attentionThreshold)
-                    attentionHit++;
-                
-                var justiceForce = p.g; // Lighten
-                var injusticeForce = p.r + p.b + p.a * invertWeight;
-
-                var stance = Mathf.Clamp(justiceForce - injusticeForce, -1f, 1f);
-
-                if (j > 0.5f)
-                {
-                    justiceSum += stance * j;
-                    justiceWeight += j;
-                }
-
-                if (!(ij > 0.5f)) continue;
-                injusticeSum += -stance * ij;
-                injusticeWeight += ij;
-            }
-        }
+        // for (var y = 0; y < height; y++)
+        // {
+        //     for (var x = 0; x < width; x++)
+        //     {
+        //         var p = playerTex.GetPixel(x, y);
+        //
+        //         var ij = GlobalState.CurrentLevel.injusticeMask.GetPixel(x, y).r;
+        //
+        //         var region = Mathf.Max(j, ij);
+        //         if (region < 0.5f)
+        //             continue;
+        //
+        //         attentionCount++;
+        //         var totalEdit = p.r + p.g + p.b + p.a;
+        //         if (totalEdit > attentionThreshold)
+        //             attentionHit++;
+        //         
+        //         var justiceForce = p.g; // Lighten
+        //         var injusticeForce = p.r + p.b + p.a * invertWeight;
+        //
+        //         var stance = Mathf.Clamp(justiceForce - injusticeForce, -1f, 1f);
+        //
+        //         if (j > 0.5f)
+        //         {
+        //             justiceSum += stance * j;
+        //             justiceWeight += j;
+        //         }
+        //
+        //         if (!(ij > 0.5f)) continue;
+        //         injusticeSum += -stance * ij;
+        //         injusticeWeight += ij;
+        //     }
+        // }
 
         GlobalState.ScoreResult = new ScoreResult
         {

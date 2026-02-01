@@ -500,9 +500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b76be3370f8cc4c9cf1d3d3a610192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreSceneController
-  bossSatisfaction: {fileID: 0}
-  soldCopies: {fileID: 0}
-  morality: {fileID: 0}
+  bossSatisfaction: {fileID: 1710418384}
+  soldCopies: {fileID: 1454369396}
+  morality: {fileID: 1761767342}
 --- !u!4 &930436843
 Transform:
   m_ObjectHideFlags: 0

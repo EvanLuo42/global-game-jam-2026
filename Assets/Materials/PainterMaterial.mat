@@ -51,10 +51,10 @@ Material:
     - _Radius: 0.05
     - _Softness: 0.02
     - _Strength: 1
-    - _Value: 0
+    - _Value: 1
     - _ZWrite: 0
     m_Colors:
-    - _Center: {r: 0.4116945, g: 0.82481754, b: 0, a: 0}
+    - _Center: {r: 0.16825776, g: 0.12895377, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

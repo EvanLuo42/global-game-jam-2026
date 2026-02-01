@@ -15,7 +15,6 @@ public class ViewImageRenderer : MonoBehaviour
     public Material resultMat;
 
     [Header("Render Textures")] 
-    public Texture2D sourceImage;
     public RenderTexture maskRT0;
     public RenderTexture maskRT1;
     public RenderTexture outputRT;
@@ -28,7 +27,7 @@ public class ViewImageRenderer : MonoBehaviour
 
     private void Start()
     {
-        UploadTexture(sourceImage);
+        UploadTexture(GlobalState.CurrentLevel.sourceImage);
     }
 
     private void Update()
