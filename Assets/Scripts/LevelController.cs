@@ -24,6 +24,10 @@ public class LevelController : MonoBehaviour
     public AudioClip effectApplyBack;
     public AudioClip levelBgm;
 
+    [Header("Boss Dialogue (可选)")]
+    [Tooltip("不赋值则自动查找或创建")]
+    public BossDialogueOverlay bossDialogueOverlay;
+
     // 元素引用
     private VisualElement _root;
     private VisualElement _sidebarStandard;
@@ -64,6 +68,47 @@ public class LevelController : MonoBehaviour
         
         viewImageRenderer.SetViewMode(ViewMode.Result);
         _viewport.image = targetRT;
+
+        // 所有关卡：若有 Boss 对话则在右上角播放（前 N 句自动，其余需点 Apply 进入下一句）
+        TryPlayBossDialogue();
+    }
+
+    private void TryPlayBossDialogue()
+    {
+        var level = GlobalState.CurrentLevel;
+        if (level?.bossDialogue == null || !level.bossDialogue.HasEntries) return;
+
+        var overlay = bossDialogueOverlay != null
+            ? bossDialogueOverlay
+            : FindFirstObjectByType<BossDialogueOverlay>();
+        if (overlay == null)
+        {
+            var go = new GameObject("BossDialogueOverlay");
+            overlay = go.AddComponent<BossDialogueOverlay>();
+        }
+
+        overlay.ShowDialogue(level.bossDialogue, OnBossDialogueFinished);
+    }
+
+    private void OnBossDialogueFinished() { }
+
+    private void TryShowLightenToolDialogue()
+    {
+        var level = GlobalState.CurrentLevel;
+        if (level == null) return;
+        bool hasText = !string.IsNullOrEmpty(level.lightenToolDialogueText);
+        bool hasVoice = level.lightenToolDialogueVoice != null;
+        if (!hasText && !hasVoice) return;
+
+        var overlay = bossDialogueOverlay != null
+            ? bossDialogueOverlay
+            : FindFirstObjectByType<BossDialogueOverlay>();
+        if (overlay == null)
+        {
+            var go = new GameObject("BossDialogueOverlay");
+            overlay = go.AddComponent<BossDialogueOverlay>();
+        }
+        overlay.ShowSubLine(level.lightenToolDialogueText, level.lightenToolDialogueVoice);
     }
 
     private void Update()
@@ -155,6 +200,7 @@ public class LevelController : MonoBehaviour
             case "BtnLighten":
                 viewImageRenderer.SetMaskMode(MaskMode.Lighten);
                 _maskPainter.OnSwitchMaskMode((int) MaskMode.Lighten);
+                TryShowLightenToolDialogue();
                 break;
         }
 
@@ -163,13 +209,7 @@ public class LevelController : MonoBehaviour
 
     private void OnSubmitClicked()
     {
-        // if (_currentSelectedBtn != null)
-        //     Debug.Log($"应用效果: {_currentSelectedBtn.text}");
-        // else
-        //     Debug.Log("提交整个关卡");
-        
         AudioManager.Instance.PlaySFX(effectApplyBack);
-
         FindFirstObjectByType<ScoreCalculator>().CalculateScore();
     }
 
