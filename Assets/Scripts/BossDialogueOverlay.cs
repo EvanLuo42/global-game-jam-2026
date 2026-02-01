@@ -30,8 +30,8 @@ public class BossDialogueOverlay : MonoBehaviour
     [Range(0.02f, 0.25f)]
     public float panelTopRatio = 0.06f;
     [Tooltip("对话框高度占屏幕比例")]
-    [Range(0.1f, 0.35f)]
-    public float panelHeightRatio = 0.18f;
+    [Range(0.1f, 0.5f)]
+    public float panelHeightRatio = 0.27f;
     [Tooltip("背景半透明黑")]
     public Color panelBackgroundColor = new Color(0.1f, 0.1f, 0.1f, 0.88f);
 
@@ -54,9 +54,18 @@ public class BossDialogueOverlay : MonoBehaviour
     private System.Action _onFinished;
     private Coroutine _lineCoroutine;
     private Coroutine _subLineCoroutine;
+    private bool _skipToNextRequested;
 
     /// <summary> 是否正在显示对话 </summary>
     public bool IsShowing { get; private set; }
+
+    /// <summary> 点击对话框时调用，立即进入下一句（并停止当前句语音） </summary>
+    public void RequestSkipToNext()
+    {
+        _skipToNextRequested = true;
+        if (_voiceSource != null && _voiceSource.isPlaying)
+            _voiceSource.Stop();
+    }
 
     private void Awake()
     {
@@ -90,7 +99,10 @@ public class BossDialogueOverlay : MonoBehaviour
 
         var panelImage = panelGo.AddComponent<Image>();
         panelImage.color = panelBackgroundColor;
-        panelImage.raycastTarget = false; // 不阻挡射线，玩家始终能在画布上画画
+        panelImage.raycastTarget = true; // 可点击，用于点击跳过
+        var panelBtn = panelGo.AddComponent<Button>();
+        panelBtn.transition = Selectable.Transition.None;
+        panelBtn.onClick.AddListener(RequestSkipToNext);
 
         // 主对话文本（上方，下方留空给子对话）
         var textGo = new GameObject("DialogueText");
@@ -294,10 +306,16 @@ public class BossDialogueOverlay : MonoBehaviour
             }
             _textGroup.alpha = 1f;
 
-            // 等待：音频时长 + 5 秒，然后进入下一句
+            // 等待：音频时长 + delay，期间点击对话框可跳过进入下一句
             float audioLength = entry.voiceClip != null ? entry.voiceClip.length : 0f;
             float waitTotal = audioLength + delayAfterAudioSeconds;
-            yield return new WaitForSecondsRealtime(waitTotal);
+            float elapsed = 0f;
+            while (elapsed < waitTotal && !_skipToNextRequested)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                yield return null;
+            }
+            _skipToNextRequested = false;
 
             // 渐隐
             for (float t = 0; t < textFadeOutDuration; t += Time.unscaledDeltaTime)
